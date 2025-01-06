@@ -1,6 +1,6 @@
 layers:
   BASE:
-  - {t: BASE, h: toggle}
+  - ESCAPE
   - Q
   - W
   - E
@@ -11,8 +11,8 @@ layers:
   - I
   - O
   - P
-  - L_BASE L_PHOTO L_GAME
-  - {t: TAB, h: LCMD}
+  - '['
+  - TAB
   - {t: A, h: NAV}
   - {t: S, h: LEFT ALT}
   - {t: D, h: LCTRL}
@@ -24,23 +24,23 @@ layers:
   - {t: L, h: RIGHT ALT}
   - {t: ;, h: LCMD}
   - DEL
-  - SEARCH
+  - RCTRL
   - Z
-  - {t: X, h: MEH}
-  - {t: C, h: HYPER}
+  - X
+  - LEFT SHIFT
   - V
   - B
   - N
   - M
-  - {t: ',', h: HYPER}
-  - {t: ., h: MEH}
+  - ','
+  - .
   - /
-  - DEV TOOLS
-  - SCRL SLOW
-  - L CLK
-  - {t: BACK SPACE, h: NUM}
-  - {t: RETURN, h: MOUSE}
-  - {t: SPACE, h: SYM}
+  - '-'
+  - SPACE
+  - LEFT SHIFT
+  - BACK SPACE
+  - ENTER
+  - '='
   NUM:
   - {t: ▽, type: trans}
   - ''
@@ -80,7 +80,7 @@ layers:
   - ''
   - ''
   - ''
-  - {type: held}
+  - {t: ▽, type: trans}
   - '0'
   - {t: ▽, type: trans}
   NAV:
@@ -166,7 +166,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ''
-  - {type: held}
+  - {t: ▽, type: trans}
   GAME: ['1', TAB, Q, W, E, R, '', '', '', '', '', '', '2', LCTRL, A, S, D, F, '', '', '', '', '', '', '3', LSHFT, Z, X, C, V, '', '', '', '', '', '', '', SPACE,
     LEFT ALT, '', '']
   PHOTOS:
@@ -293,7 +293,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: RETURN, type: held}
+  - RETURN
   - {t: ▽, type: trans}
   SLOW:
   - {t: ▽, type: trans}
