@@ -78,18 +78,6 @@ include:
     format: dongle
     artifact-name: charybdis_colemak_dongle
 
-# QWERTY BT
-  - board: nice_nano_v2
-    shield: charybdis_left
-    keymap: qwerty
-    format: bt
-    artifact-name: charybdis_qwerty_left_log
-  - board: nice_nano_v2
-    shield: charybdis_right
-    keymap: qwerty
-    format: bt
-    artifact-name: charybdis_qwerty_right_log
-    snippet: zmk-usb-logging
 
   # Firmware Reset
   - board: nice_nano_v2
