@@ -389,3 +389,5 @@ combos:
   k: R CLK
 - p: [38, 39]
   k: L_BASE L_EXTRA
+- p: [0, 1]
+  k: ESCAPE
