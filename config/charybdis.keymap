@@ -1,12 +1,13 @@
-#include <behaviors.dtsi>
 #include <behaviors/mouse_keys.dtsi>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
+#include "macros.dtsi"
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
-#include "macros.dtsi"
+#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/pointing.h>
 
 // / {
 //     chosen { zmk,matrix_transform = &default_transform; };
@@ -80,14 +81,16 @@
             quick-tap-ms = <150>; // If you press a tapped hold-tap again within quick-tap-ms milliseconds of the first press, it will always trigger the tap behavior.
             require-prior-idle-ms = <185>; // like quick-tap-ms however it will apply for any non-modifier key pressed before it
             bindings = <&kp>, <&kp>;
-  // hold, tap
+
+            // hold, tap
         };
 
         td_cursor: td_scroll_or_cursor {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&lt 9 ESC>, <&to 8>;
- // hold, tap, double_tap
+            bindings = <&lt 7 ESC>, <&to 6>;
+
+            // hold, tap, double_tap
         };
 
         httl: ht_two_layers {
@@ -102,22 +105,24 @@
         td_layers: td_layer_swap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&to 0>, <&to 5>, <&to 4>;
- // tap, double_tap, tripple_tap
+            bindings = <&to 0>, <&to 0>, <&to 0>;
+
+            // tap, double_tap, tripple_tap
         };
 
         td_clk_scrl: td_click_or_scroll {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&mkp RCLK>, <&mo 9>;
-  // tap/hold, double_tap
+            bindings = <&mkp RCLK>, <&mo 7>;
+
+            // tap/hold, double_tap
         };
 
         td_bore: BASE_or_EXTRA {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&mo 6>, <&to 0>;
+            bindings = <&mo 4>, <&to 0>;
         };
     };
 
@@ -148,6 +153,16 @@
         esc {
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
+        };
+
+        leftbracket {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <32 33>;
+        };
+
+        rightbrack {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <33 34>;
         };
 
         // GameLayer {
@@ -185,28 +200,28 @@
 
         BASE {
             bindings = <
-&to 0            &kp Q    &kp W                     &kp E                         &kp R             &kp T              &kp Y         &kp U             &kp I                             &kp O                          &kp P               &td_layers
-&hm LCMD TAB     &lt 2 A  &hm LEFT_ALT S            &hm LCTRL D                   &hm LEFT_SHIFT F  &kp G              &kp H         &hm LEFT_SHIFT J  &hm RCTRL K                       &hm RIGHT_ALT L                &hm LCMD SEMICOLON  &kp DEL
-&kp C_AC_SEARCH  &kp Z    &hm LC(LA(LEFT_SHIFT)) X  &hm LA(LC(LG(LEFT_SHIFT))) C  &kp V             &kp B              &kp N         &kp M             &hm LA(LC(LG(LEFT_SHIFT))) COMMA  &hm LC(LA(LEFT_SHIFT)) PERIOD  &kp FSLH            &kp F12
-                                                    &td_cursor                    &mkp LCLK         &lt 1 BACKSPACE    &lt 7 RETURN  &lt 3 SPACE
-            >;
-        };
-
-        NUM {
-            bindings = <
-&trans  &none  &none  &none  &none          &none     &kp SLASH  &hm F7 N7  &hm F8 N8  &hm F9 N9  &hm F10 MINUS  &none
-&trans  &none  &none  &none  &kp BACKSPACE  &none     &kp ASTRK  &hm F4 N4  &hm F5 N5  &hm F6 N6  &hm F11 PLUS   &trans
-&none   &none  &none  &none  &none          &none     &kp DOT    &hm F1 N1  &hm F2 N2  &hm F3 N3  &hm F12 EQUAL  &none
-                      &none  &none          &trans    &kp N0     &trans
+&kp TAB    &kp Q    &kp W                     &kp E                 &kp R             &kp T              &kp Y         &kp U             &kp I                             &kp O                          &kp P               &td_layers
+&kp LCTRL  &lt 1 A  &hm LEFT_ALT S            &hm LCTRL D           &hm LEFT_SHIFT F  &kp G              &kp H         &hm LEFT_SHIFT J  &hm RCTRL K                       &hm RIGHT_ALT L                &hm LCMD SEMICOLON  &kp SQT
+&kp LSHFT  &kp Z    &hm LC(LA(LEFT_SHIFT)) X  &hm LA(LEFT_SHIFT) C  &kp V             &kp B              &kp N         &kp M             &hm LA(LC(LG(LEFT_SHIFT))) COMMA  &hm LC(LA(LEFT_SHIFT)) PERIOD  &kp FSLH            &kp MINUS
+                                              &lt 2 LEFT_WIN        &lt 1 SPACE       &lt 2 BACKSPACE    &lt 5 RETURN  &mkp LCLK
             >;
         };
 
         NAV {
             bindings = <
-&none   &none   &none   &none   &none   &none     &none    &kp LS(LC(H))   &kp LS(LC(J))  &kp LS(LC(K))  &kp LS(LC(L))    &none
-&trans  &trans  &trans  &trans  &trans  &none     &VSplit  &kp LEFT_ARROW  &kp DOWN       &kp UP         &kp RIGHT_ARROW  &none
-&none   &none   &none   &none   &none   &none     &HSplit  &kp HOME        &kp PG_DN      &kp PG_UP      &kp END          &none
-                        &none   &none   &trans    &trans   &trans
+&none   &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END    &none     &none   &kp DEL         &kp PRINTSCREEN  &kp C_VOL_DN  &kp C_VOL_UP     &none
+&trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &none     &trans  &kp LEFT_ARROW  &kp DOWN         &kp UP        &kp RIGHT_ARROW  &none
+&none   &none           &none           &none         &none      &none     &trans  &trans          &trans           &trans        &trans           &none
+                                        &none         &none      &trans    &trans  &trans
+            >;
+        };
+
+        NUM {
+            bindings = <
+&trans  &kp F1        &kp F2      &kp F3         &kp F4        &kp F5           &kp F6         &kp F7        &kp F8        &kp F9        &kp F10       &kp F11
+&trans  &kp N1        &kp N2      &kp N3         &kp N4        &kp N5           &kp N6         &kp N7        &kp N8        &kp N9        &kp N0        &kp F12
+&none   &kp LS(EXCL)  &kp LS(AT)  &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)    &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)  &kp LS(LPAR)  &kp LS(RPAR)  &none
+                                  &none          &none         &trans           &kp N0         &trans
             >;
         };
 
@@ -216,24 +231,6 @@
 &none  &hm LCMD EXCL  &hm LEFT_ALT LPAR  &hm LCTRL RPAR   &hm LEFT_SHIFT SPACE  &kp TILDE        &kp SLASH  &hm LEFT_SHIFT SPACE  &hm LCTRL LT  &hm LEFT_ALT GT  &kp HASH     &none
 &none  &kp EQUAL      &kp LBKT           &kp RBKT         &kp UNDERSCORE        &kp SEMICOLON    &kp PIPE   &kp ASTRK             &kp AMPS      &kp PRCNT        &kp AT_SIGN  &none
                                          &trans           &trans                &trans           &none      &trans
-            >;
-        };
-
-        GAME {
-            bindings = <
-&kp N1  &kp TAB    &kp Q  &kp W  &kp E      &kp R           &none  &none  &none  &none  &none  &none
-&kp N2  &kp LCTRL  &kp A  &kp S  &kp D      &kp F           &none  &none  &none  &none  &none  &none
-&kp N3  &kp LSHFT  &kp Z  &kp X  &kp C      &kp V           &none  &none  &none  &none  &none  &none
-                          &none  &kp SPACE  &kp LEFT_ALT    &none  &none
-            >;
-        };
-
-        PHOTOS {
-            bindings = <
-&trans          &kp LA(LC(LS(Z)))  &kp LA(LC(LS(E)))  &kp LA(LC(LS(A)))  &kp LA(LC(LS(S)))  &kp LA(LC(LS(B)))    &none   &none   &none  &none  &none  &none
-&kp LC(LA(E))   &kp LEFT           &kp DOWN           &kp UP             &kp RIGHT          &kp LCTRL            &none   &none   &none  &none  &none  &trans
-&kp LS(DELETE)  &kp LA(LS(A))      &kp LA(KP_N1)      &kp LA(KP_N2)      &kp LA(KP_N3)      &none                &none   &none   &none  &none  &none  &none
-                                                      &trans             &trans             &trans               &trans  &trans
             >;
         };
 
