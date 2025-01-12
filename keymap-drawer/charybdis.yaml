@@ -67,14 +67,14 @@ layers:
   - RIGHT
   - ''
   - ''
+  - '&td_clk_scrl'
   - ''
-  - ''
-  - ''
-  - ''
+  - L CLK
+  - R CLK
   - ''
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - L CLK
+  - R CLK
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ''
