@@ -1,12 +1,13 @@
-#include <behaviors.dtsi>
 #include <behaviors/mouse_keys.dtsi>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
+#include "macros.dtsi"
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
-#include "macros.dtsi"
+#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/pointing.h>
 
 // / {
 //     chosen { zmk,matrix_transform = &default_transform; };
@@ -199,10 +200,10 @@
 
         BASE {
             bindings = <
-&kp TAB    &kp Q    &kp W                     &kp E                 &kp R             &kp T              &kp Y         &kp U             &kp I                             &kp O                          &kp P               &td_layers
-&kp LCTRL  &lt 1 A  &hm LEFT_ALT S            &hm LCTRL D           &hm LEFT_SHIFT F  &kp G              &kp H         &hm LEFT_SHIFT J  &hm RCTRL K                       &hm RIGHT_ALT L                &hm LCMD SEMICOLON  &kp SQT
-&kp LSHFT  &kp Z    &hm LC(LA(LEFT_SHIFT)) X  &hm LA(LEFT_SHIFT) C  &kp V             &kp B              &kp N         &kp M             &hm LA(LC(LG(LEFT_SHIFT))) COMMA  &hm LC(LA(LEFT_SHIFT)) PERIOD  &kp FSLH            &kp MINUS
-                                              &lt 2 LEFT_WIN        &lt 1 SPACE       &lt 2 BACKSPACE    &lt 5 RETURN  &mkp LCLK
+&kp TAB    &kp Q    &kp W                     &kp E           &kp R             &kp T            &kp Y         &kp U             &kp I                             &kp O                          &kp P          &td_layers
+&kp LCTRL  &lt 1 A  &hm LEFT_ALT S            &hm LCTRL D     &hm LEFT_SHIFT F  &kp G            &kp H         &hm LEFT_SHIFT J  &hm RCTRL K                       &hm RIGHT_ALT L                &kp SEMICOLON  &kp SQT
+&kp LSHFT  &kp Z    &hm LC(LA(LEFT_SHIFT)) X  &mt LEFT_ALT C  &kp V             &kp B            &kp N         &kp M             &hm LA(LC(LG(LEFT_SHIFT))) COMMA  &hm LC(LA(LEFT_SHIFT)) PERIOD  &kp FSLH       &kp MINUS
+                                              &lt 2 LEFT_WIN  &lt 1 SPACE       &kp BACKSPACE    &lt 5 RETURN  &lt 2 EQUAL
             >;
         };
 
