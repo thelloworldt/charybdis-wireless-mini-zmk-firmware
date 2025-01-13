@@ -11,7 +11,7 @@ layers:
   - I
   - O
   - P
-  - L_BASE L_PHOTO L_GAME
+  - '|'
   - LCTRL
   - {t: A, h: NAV}
   - {t: S, h: LEFT ALT}
