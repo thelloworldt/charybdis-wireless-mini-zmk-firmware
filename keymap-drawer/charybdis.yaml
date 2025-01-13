@@ -11,7 +11,7 @@ layers:
   - I
   - O
   - P
-  - L_BASE L_PHOTO L_GAME
+  - '|'
   - LCTRL
   - {t: A, h: NAV}
   - {t: S, h: LEFT ALT}
@@ -22,12 +22,12 @@ layers:
   - {t: J, h: LEFT SHIFT}
   - {t: K, h: RCTRL}
   - {t: L, h: RIGHT ALT}
-  - {t: ;, h: LCMD}
+  - ;
   - ''''
   - LSHFT
   - Z
   - {t: X, h: MEH}
-  - {t: C, h: Alt+ LEFT SHIFT}
+  - {t: C, h: LEFT ALT}
   - V
   - B
   - N
@@ -38,9 +38,9 @@ layers:
   - '-'
   - {t: LEFT WIN, h: NUM}
   - {t: SPACE, h: NAV}
-  - {t: BACK SPACE, h: NUM}
+  - BACK SPACE
   - {t: RETURN, h: MOUSE}
-  - L CLK
+  - {t: '=', h: NUM}
   NAV:
   - ''
   - HOME
