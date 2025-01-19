@@ -11,7 +11,7 @@ layers:
   - I
   - O
   - P
-  - '|'
+  - \
   - LCTRL
   - {t: A, h: NAV}
   - {t: S, h: LEFT ALT}
@@ -39,7 +39,7 @@ layers:
   - {t: LEFT WIN, h: NUM}
   - {t: SPACE, h: NAV}
   - BACK SPACE
-  - {t: RETURN, h: MOUSE}
+  - {t: RETURN, h: SCROLL}
   - {t: '=', h: NUM}
   NAV:
   - ''
@@ -77,7 +77,7 @@ layers:
   - R CLK
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ''
+  - {t: '=', h: EXTRAS}
   - ''
   - ''
   - {t: ▽, type: trans}
@@ -181,7 +181,7 @@ layers:
   - OUT TOG
   - BT CLR
   - SLEEP
-  - SHIT SUDO
+  - {t: SHIT SUDO, type: held}
   - PYTHON LOOP
   - JS LOOP
   - ''
@@ -203,7 +203,7 @@ layers:
   - VOLUME DOWN
   - VOLUME UP
   - PRINT SCREEN
-  - ZMK Studio
+  - {t: ZMK Studio, type: held}
   - ''
   - ''
   - ''
@@ -249,7 +249,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: RETURN, type: held}
+  - RETURN
   - {t: ▽, type: trans}
   SLOW:
   - {t: ▽, type: trans}
@@ -333,7 +333,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
 combos:
 - p: [17, 18]
