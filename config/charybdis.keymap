@@ -208,7 +208,7 @@
 
         NAV {
             bindings = <
-&none   &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END    &none     &none   &kp DEL         &kp PRINTSCREEN  &kp C_VOL_DN  &kp C_VOL_UP     &none
+&GRAVE  &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END    &none     &none   &kp DEL         &kp PRINTSCREEN  &kp C_VOL_DN  &kp C_VOL_UP     &none
 &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &none     &trans  &kp LEFT_ARROW  &kp DOWN         &kp UP        &kp RIGHT_ARROW  &none
 &none   &td_clk_scrl    &mo 6          &mkp LCLK     &mkp RCLK  &none     &trans  &mkp LCLK       &mkp RCLK        &trans        &trans           &mo 4
                                         &none         &none      &trans    &trans  &trans
